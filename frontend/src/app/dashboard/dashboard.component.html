@@ -1,1 +1,20 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <app-navbar />
+  <nav class="sidebar">
+    <h3>Tenants</h3>
+    <ul>
+      <li *ngFor="let tenant of tenants" (click)="selectTenant(tenant)">
+        {{ tenant.name }}
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header>
+      <h1>Dashboard - {{ tenantName }}</h1>
+      <p>Welcome, {{ user.name }} ({{ user.role }})</p>
+    </header>
+    <section class="widgets">
+      <p>Dashboard widgets go here...</p>
+    </section>
+  </main>
+</div>
